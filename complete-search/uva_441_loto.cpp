@@ -1,4 +1,4 @@
-/* Uva 441 - Loto. [https://onlinejudge.org/index.php?option=onlinejudge&page=show_problem&problem=382]
+/* Uva 441 - Loto. [https://onlinejudge.org/external/4/441.pdf]
 */
 #include <iostream>
 #include <vector>
