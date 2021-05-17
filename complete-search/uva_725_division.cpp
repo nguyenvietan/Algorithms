@@ -1,3 +1,5 @@
+/* Uva 725 - Division. [https://onlinejudge.org/external/7/725.pdf]
+ */
 #include <iostream>
 using namespace std;
 
