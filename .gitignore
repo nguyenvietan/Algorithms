@@ -2,3 +2,4 @@ debug.sh
 *.o
 input
 main
+.vscode/*
