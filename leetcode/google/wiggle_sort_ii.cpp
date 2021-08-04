@@ -35,7 +35,7 @@ int main() {
     vector<int> nums {1, 3, 5, 9, 2, 5, 5, 5, 4, 8};
     vector<int> v(nums.begin(), nums.end());
     int n = v.size();
-    int median = find_k_th_smallest_elem(v, 0, n-1, n/2);
+    int median = find_k_th_smallest_elem(v, 0, n-1, (n+1)/2);
     cout << "median = " << median << "\n";
     int j = n-1;
     for (int i = 1; i < n; i+=2) nums[i] = v[j--]; // corner case: [4 5 5 6]
