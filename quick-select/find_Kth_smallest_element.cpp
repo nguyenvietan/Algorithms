@@ -3,24 +3,16 @@
 
 using namespace std;
 
-int partition(vector<int>& a, int lo, int hi) {
-	int pivot = hi;
-	int i = 0;
-	for (int j = 0; j <= hi; ++j) {
-		if (a[j] < a[pivot]) {
-			// swap(a[i], a[j])
-			int tmp = a[i];
-			a[i] = a[j];
-			a[j] = tmp;
-			++i;
-		}
-	}
-	// move a[pivot] to the midle of the left and right partitions
-	int tmp = a[i];
-	a[i] = a[pivot];
-	a[pivot] = tmp;
-	return i;
+int partition(vector<int>& v, int lo, int hi) {
+    int pivot = v[hi], i = lo, idx;
+    while (i <= hi) {
+        if (v[i] == pivot) i++;
+        else if (v[i] < pivot) swap(v[i++], v[lo++]);
+        else swap(v[i], v[hi--]);
+    }
+    return lo;
 }
+
 /* Simplified analysis of Time complexity:
 	Assume the partition function divides the array into two halves at each round.
 	Each round takes O(L) = cL, where L is the length of the one half, c is constant.
