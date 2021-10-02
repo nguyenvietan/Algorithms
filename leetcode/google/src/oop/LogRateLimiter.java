@@ -1,13 +1,11 @@
 package oop;
 
-import java.util.*;
-import java.util.regex.Pattern;
-
 /**
- * Solution #1: Queue+ Set (sliding window)
+ * Solution #1: Set + Queue
  */
 /*
-public class Logger {
+class LogRateLimiter {
+
     private class Pair<U, V> {
         U first;
         V second;
@@ -15,7 +13,7 @@ public class Logger {
     }
     private Set<String> set;
     private List<Pair<String, Integer>> list;
-    public Logger() {
+    public LogRateLimiter() {
         set = new HashSet<>();
         list = new LinkedList<>();
     }
@@ -32,29 +30,29 @@ public class Logger {
         list.add(new Pair<String, Integer>(message, timestamp));
         return true;
     }
-
 }
 */
+
+import java.util.HashMap;
 
 /**
  * Solution #2: HashMap
  */
-class Logger {
-    private HashMap<String, Integer> map;
-    public Logger() {
-        map = new HashMap<>();
-    }
-    public boolean shouldPrintMessage(int timestamp, String message) {
-        if (map.containsKey(message)) {
-            int lastPrintedTime = map.get(message);
-            if (lastPrintedTime + 10 <= timestamp) {
-                map.put(message, timestamp);
-                return true;
-            }
-            return false;
-        }
-        map.put(message, timestamp);
-        return true;
-    }
+class LogRateLimiter {
+	private HashMap<String, Integer> map;
+	public LogRateLimiter() {
+		map = new HashMap<>();
+	}
+	public boolean shouldPrintMessage(int timestamp, String message) {
+		if (map.containsKey(message)) {
+			int lastPrintedTime = map.get(message);
+			if (lastPrintedTime + 10 <= timestamp) {
+				map.put(message, timestamp);
+				return true;
+			}
+			return false;
+		}
+		map.put(message, timestamp);
+		return true;
+	}
 }
-

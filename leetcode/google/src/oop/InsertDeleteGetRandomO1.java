@@ -5,14 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
-class RandomizedSet {
+class InsertDeleteGetRandomO1 {
 
 	private HashMap<Integer, Integer> map;
 	private List<Integer> array;
 	private Random rand;
 
 	/** Initialize your data structure here. */
-	public RandomizedSet() {
+	public InsertDeleteGetRandomO1() {
 		map = new HashMap<>();
 		array = new ArrayList<>();
 		rand = new Random();
@@ -48,14 +48,4 @@ class RandomizedSet {
 		return array.get(idx);
 	}
 
-	public static void main(String[] args) {
-		RandomizedSet randSet = new RandomizedSet();
-		System.out.println(randSet.insert(0));
-		System.out.println(randSet.insert(1));
-		System.out.println(randSet.getRandom());
-		System.out.println(randSet.remove(0));
-		System.out.println(randSet.remove(0));
-	}
-
 }
-

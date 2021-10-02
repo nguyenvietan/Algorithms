@@ -3,13 +3,12 @@ package oop;
 import java.util.HashMap;
 
 /**
- * 	Double linked list:
- * 		newest									oldest
- * 		HEAD <-> 1 <-> 2 <-> 3 <-> 4 <-> 5 <-> TAIL
- *	HashMap:
- *		key : Node(key, val)
+ * 	LRU cache: HashMap + Double Linked List
+ * 	HEAD <-> 1 <-> 2 <-> 3 <-> 4 <-> 5 <-> TAIL
+ * 	key : (key, node)
  */
-public class LRUCache {
+class LRUCache {
+
 	//-- LRUCache attributes and constructors
 	private class Node {
 		int key;
@@ -87,16 +86,11 @@ public class LRUCache {
 		return -1;
 	}
 
-
-	public static void main(String[] args) {
-		LRUCache lruCache = new LRUCache(4);
-		lruCache.put(1, 1);
-		lruCache.put(2, 2);
-		lruCache.put(3, 3);
-		lruCache.put(4, 0);
-		System.out.println(lruCache.get(1));
-		lruCache.put(5, 88);
-		System.out.println(lruCache.get(2));
-
-	}
 }
+
+/**
+ * Your LRUCache object will be instantiated and called as such:
+ * LRUCache obj = new LRUCache(capacity);
+ * int param_1 = obj.get(key);
+ * obj.put(key,value);
+ */
