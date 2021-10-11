@@ -3,3 +3,5 @@ debug.sh
 input
 main
 .vscode/*
+**/out/*
+
