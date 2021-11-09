@@ -1,0 +1,18 @@
+Weekly Contest 266
+    2064. Minimized Maximum of Products Distributed to Any Store
+        Binary Search + Simulation
+        s += (x-1)/mid + 1, is equivalent to: if (x % mid == 0) s += x/mid; else s += x/mid + 1;
+
+    2065. Maximum Path Quality of a Graph
+        DFS
+        make the code concise:
+        	private List<int[]>[] graph;
+        	private int ans;
+        	private void buildGraph(int n, int[][] edges) {
+                graph = new List[n]; // keep in mind
+        		for (int i = 0; i < n; ++i) graph[i] = new ArrayList<>(); // keep in mind
+        		for (int[] e : edges) {
+        			graph[e[0]].add(new int[]{e[1], e[2]});		// so concise!
+        			graph[e[1]].add(new int[]{e[0], e[2]});		// so concise!
+        		}
+        	}
