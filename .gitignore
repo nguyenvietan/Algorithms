@@ -4,4 +4,6 @@ input
 main
 .vscode/*
 **/out/
+**/.idea/*
+*.iml
 
