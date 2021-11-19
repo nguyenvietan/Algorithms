@@ -1,0 +1,48 @@
+					*TECHNICAL SKILLS to REMEMBER*
+
+List all combinations
+
+Java Heap, Comparator, ...
+------------------------
+Java's key libraries
+
+Sorting:
+	Arrays.sort(int[]) // more? 
+
+
+Maps:
+	containsKey()
+	keySet()
+
+Lists:
+	addAll(List<>)
+	add(int)
+
+#Techniques to remember
+
+BIT MANIPULATION
+	Count the number of bit 1s of an integer
+		int count1bits(int x) {
+			int cnt = 0;
+			while (x > 0) {
+				if ((x&1) != 0) cnt++;
+				x >>= 1;
+			}
+			return cnt;
+		}
+
+	Or better way:
+		int count1bits(int x) {
+			int cnt = 0;
+			while (x != 0) {
+				cnt++;
+				x = x & (x-1);
+			}
+			return cnt;
+		}
+
+# Basic data structures
+
++ Disjoint set union
+
++ Priority Queue (Java)
