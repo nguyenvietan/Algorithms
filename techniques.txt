@@ -41,6 +41,33 @@ BIT MANIPULATION
 			return cnt;
 		}
 
+LOWER BOUND, UPPER BOUND of an sorted array
+	lower bound: return the index of the first num >= value
+	upper bound: return the index of the first num > value
+		0 1 2 3 4 5 5 5 5 7 8 9
+				  ^       ^
+				  lower   upper
+
+	int lowerBound(int[] a, int val) {
+		int	l = 0, r = a.length, m;
+		while (l < r) {
+			m = (l+r)/2;
+			if (a[m] < val) l = m+1;
+			else r = m;			
+		}
+		return r;
+	}
+
+	int upperBound(int[] a, int val) {
+		int	l = 0, r = a.length, m;
+		while (l < r) {
+			m = (l+r)/2;
+			if (a[m] <= val) l = m+1;
+			else r = m;
+		}
+		return r;
+	}
+
 # Basic data structures
 
 + Disjoint set union
