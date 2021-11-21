@@ -13,7 +13,9 @@ Sorting:
 Maps:
 	containsKey()
 	keySet()
-
+	putIfAbsent(key, val)
+		eg.	map.putIfAbsent(arr[i], new ArrayList<>());
+            map.get(arr[i]).add(i);
 Lists:
 	addAll(List<>)
 	add(int)
