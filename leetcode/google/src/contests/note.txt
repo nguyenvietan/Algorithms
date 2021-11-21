@@ -16,3 +16,8 @@ Weekly Contest 266
         			graph[e[1]].add(new int[]{e[0], e[2]});		// so concise!
         		}
         	}
+Weekly Contest 268
+    2080. Range Frequency Queries
+        Binary Search: lower/upper bound
+    Sum of K Mirror Numbers
+        Generate 10-based mirror numbers
