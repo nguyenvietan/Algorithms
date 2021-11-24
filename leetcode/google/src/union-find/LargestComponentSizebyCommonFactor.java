@@ -1,4 +1,4 @@
-class Solution {
+class LargestComponentSizeByCommonFactor {
 
     private class UnionFind {
         private int[] parent, ranks, sizes;
@@ -22,25 +22,24 @@ class Solution {
     private int[] primes;
 
     public int largestComponentSize(int[] nums) {
-        UnionFind u = new UnionFind(100005);
-        Map<Integer, Integer> map = new HashMap<>(); // map: num -> first prime factor
-        for (int x : nums) {
+        int n = nums.length;
+        UnionFind u = new UnionFind(n+1);
+        Map<Integer, List<Integer>> map = new HashMap<>(); // map: prime -> list of nums[i] where nums[i]%prime == 0
+        for (int i = 0; i < n; ++i) {
             // create list of factors
-            List<Integer> factorsList = primeDecompose(x);
-
-            map.put(x, factorsList.get(0));
-
-            // union join pairs of factors
-            for (int i = 1; i < factorsList.size(); ++i) {
-                u.union(factorsList.get(i-1), factorsList.get(i));
+            List<Integer> factorsList = primeDecompose(nums[i]);
+            for (int prime : factorsList) {
+                map.putIfAbsent(prime, new ArrayList<>());
+                map.get(prime).add(i);
             }
+        }
+        for (int key : map.keySet()) {
+            List<Integer> list = map.get(key);
+            for (int i = 1; i < list.size(); ++i) u.union(list.get(i), list.get(i-1));
         }
         // return max size
         int maxSize = 0;
-        for (int k : map.keySet()) {
-            int val = map.get(k);
-            maxSize = Math.max(maxSize, u.getSizeOfSet(val)+1);
-        }
+        for (int i = 0; i < n+1; ++i) maxSize = Math.max(maxSize, u.getSizeOfSet(i));
         return maxSize;
     }
 
