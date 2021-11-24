@@ -19,6 +19,7 @@ Maps:
 Lists:
 	addAll(List<>)
 	add(int)
+	list to array: list.toArray(new int[list.size][])
 
 #Techniques to remember
 
