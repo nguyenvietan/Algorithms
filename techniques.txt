@@ -21,6 +21,8 @@ Lists:
 	add(int)
 	remove(list.size()-1)
 	List<List<Integer>> list; list.add(new ArrayList<>(list2));
+	list to array: list.toArray(new int[list.size][])
+
 #Techniques to remember
 
 BIT MANIPULATION
@@ -71,11 +73,31 @@ LOWER BOUND, UPPER BOUND of an sorted array
 		return r;
 	}
 
+<<<<<<< HEAD
 QUICK SELECT
 	// TODO: review
 
 ==================================================
 			FUNDAMENTAL DATASTRUCTURES
+=======
+PRIME DECOMPOSE
+	List<Integer> primeDecompose(int n) {
+		List<Integer> res = new ArrayList<>();
+		int factor = 2;
+		while (n >= factor*factor) {
+			if (n%factor == 0) {
+				res.add(factor);
+				n /= factor;
+			} else factor++;
+		}
+		res.add(num); // don't forget
+		return res;				
+	}
+	Exercises:
+		+ Largest Component Size by Common Factor	
+
+# Basic data structures
+>>>>>>> b90afbf60842cc12307986efb05d9e99f734d707
 
 + Disjoint Set Union
 
