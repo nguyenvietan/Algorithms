@@ -19,7 +19,8 @@ Maps:
 Lists:
 	addAll(List<>)
 	add(int)
-
+	remove(list.size()-1)
+	List<List<Integer>> list; list.add(new ArrayList<>(list2));
 #Techniques to remember
 
 BIT MANIPULATION
@@ -64,14 +65,20 @@ LOWER BOUND, UPPER BOUND of an sorted array
 		int	l = 0, r = a.length, m;
 		while (l < r) {
 			m = (l+r)/2;
-			if (a[m] <= val) l = m+1;
+			if (a[m] <= val) l = m+1; // key difference
 			else r = m;
 		}
 		return r;
 	}
 
-# Basic data structures
+QUICK SELECT
+	// TODO: review
 
-+ Disjoint set union
+==================================================
+			FUNDAMENTAL DATASTRUCTURES
+
++ Disjoint Set Union
 
 + Priority Queue (Java)
+
++ Binary Search Tree
