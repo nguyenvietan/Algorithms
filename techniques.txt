@@ -19,6 +19,8 @@ Maps:
 Lists:
 	addAll(List<>)
 	add(int)
+	remove(list.size()-1)
+	List<List<Integer>> list; list.add(new ArrayList<>(list2));
 	list to array: list.toArray(new int[list.size][])
 
 #Techniques to remember
@@ -65,12 +67,19 @@ LOWER BOUND, UPPER BOUND of an sorted array
 		int	l = 0, r = a.length, m;
 		while (l < r) {
 			m = (l+r)/2;
-			if (a[m] <= val) l = m+1;
+			if (a[m] <= val) l = m+1; // key difference
 			else r = m;
 		}
 		return r;
 	}
 
+<<<<<<< HEAD
+QUICK SELECT
+	// TODO: review
+
+==================================================
+			FUNDAMENTAL DATASTRUCTURES
+=======
 PRIME DECOMPOSE
 	List<Integer> primeDecompose(int n) {
 		List<Integer> res = new ArrayList<>();
@@ -88,7 +97,10 @@ PRIME DECOMPOSE
 		+ Largest Component Size by Common Factor	
 
 # Basic data structures
+>>>>>>> b90afbf60842cc12307986efb05d9e99f734d707
 
-+ Disjoint set union
++ Disjoint Set Union
 
 + Priority Queue (Java)
+
++ Binary Search Tree
