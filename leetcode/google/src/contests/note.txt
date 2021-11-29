@@ -21,3 +21,6 @@ Weekly Contest 268
         Binary Search: lower/upper bound
     Sum of K Mirror Numbers
         Generate 10-based mirror numbers
+Weekly Contest 269:
+   2092. Find All People With Secret
+        DFS, be careful of TLE!!!
