@@ -23,4 +23,5 @@ Weekly Contest 268
         Generate 10-based mirror numbers
 Weekly Contest 269:
    2092. Find All People With Secret
-        DFS, be careful of TLE!!!
+        #1. DFS, be careful of TLE!!!
+        #2. Priority Queue

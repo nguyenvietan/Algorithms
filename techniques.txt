@@ -22,9 +22,19 @@ Lists:
 	remove(list.size()-1)
 	List<List<Integer>> list; list.add(new ArrayList<>(list2));
 	list to array: list.toArray(new int[list.size][])
+
 Queue:
 	Queue<Integer> q = new LinkedList<>();
 	q.isEmpty(), q.poll(), q.add()
+
+Priority Queues:
+    // dist
+    int[] dist = new int[n];
+    Arrays.fill(dist, oo);
+    // pq
+    PriorityQueue<int[]> pq = new PriorityQueue<>((u, v) -> (u[1] - v[1])); // (v, weight)
+    pq.add(new int[]{0, dist[0] = 0});
+    pq.add(new int[]{firstPerson, dist[firstPerson] = 0});
 
 #Techniques to remember
 

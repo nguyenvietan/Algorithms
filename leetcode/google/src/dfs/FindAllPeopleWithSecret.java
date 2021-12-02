@@ -1,5 +1,6 @@
 // Caution: TLE Solution!!!
 
+// Solution #1: DFS
 class FindAllPeopleWithSecret {
 	
 	private Set<Integer> set;
@@ -48,4 +49,42 @@ class FindAllPeopleWithSecret {
 
 }
 
+// Solution #2: Priority Queue
+class FindAllPeopleWithSecret {
+
+    private static final int oo = Integer.MAX_VALUE;
+
+    public List<Integer> findAllPeople(int n, int[][] meetings, int firstPerson) {
+        // build graph: u -> (v, weight)
+        Map<Integer, List<int[]>> graph = new HashMap<>();
+        for (int[] m : meetings) {
+            int u = m[0], v = m[1], t = m[2];
+            graph.putIfAbsent(u, new ArrayList<>());
+            graph.get(u).add(new int[]{v, t});
+            graph.putIfAbsent(v, new ArrayList<>());
+            graph.get(v).add(new int[]{u, t});
+        }
+        // dist
+        int[] dist = new int[n];
+        Arrays.fill(dist, oo);
+        // pq
+        PriorityQueue<int[]> pq = new PriorityQueue<>((u, v) -> (u[1] - v[1])); // (v, weight)
+        pq.add(new int[]{0, dist[0] = 0});
+        pq.add(new int[]{firstPerson, dist[firstPerson] = 0});
+        while (!pq.isEmpty()) {
+            int[] top = pq.poll();
+            int u = top[0], t = top[1];
+            for (int[] v : graph.getOrDefault(u, new ArrayList<>())) {
+                int v1 = v[0], t1 = v[1];
+                if (t1 < t) continue;
+                if (t1 < dist[v1]) pq.add(new int[]{v1, dist[v1] = t1}); // be careful, (0-5, w=7) and (0-5, w=18) can be coincident
+            }
+        }
+        // return list
+        List<Integer> res = new ArrayList<>();
+        for (int i = 0; i < n; ++i) if (dist[i] < oo) res.add(i);
+        return res;
+    }
+
+}
 
