@@ -44,8 +44,8 @@ Dequeue (faster than LinkedList/Stack as a queue)
 		// or: Iterator it = dq.iterator();
 		while (it.hasNext()) {
 			Character ch = (Character) it.next();
-
 		}
+
 #Techniques to remember
 
 BIT MANIPULATION
@@ -96,7 +96,7 @@ LOWER BOUND, UPPER BOUND of an sorted array
 		return r;
 	}
 
-<<<<<<< HEAD
+
 QUICK SELECT
 	// TODO: review
 
@@ -120,10 +120,32 @@ PRIME DECOMPOSE
 		+ Largest Component Size by Common Factor	
 
 # Basic data structures
->>>>>>> b90afbf60842cc12307986efb05d9e99f734d707
 
 + Disjoint Set Union
 
 + Priority Queue (Java)
 
 + Binary Search Tree
+
++ Trie
+	class Trie {
+		private class Node() {
+			Node[] next;
+			boolean isEnd;
+			Node() { this.next = new Node[26]; this.isEnd = false; }
+		}
+		private Node root;
+
+		public Trie(String[] words) {
+			root = new Node();
+			for (String word : words) {
+				Node cur = root;
+				for (char ch : word) {
+					int idx = ch - 'a'; // all chars are lowercase
+					if (cur.next[idx] == null) cur.next[idx] = new Node();
+					cur = cur.next[idx];
+				}
+				cur.isEnd = true;
+			}
+		}
+	}
