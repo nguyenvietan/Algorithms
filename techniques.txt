@@ -123,6 +123,37 @@ PRIME DECOMPOSE
 
 + Disjoint Set Union
 
+	class UnionFind {
+		private int[] parent, ranks, sizes;
+		private int nSets;
+		public UnionFind(int n) {
+			this.parent = new int[n];
+			this.ranks = new int[n];
+			this.sizes = new int[n];
+			this.nSets = n;
+			for (int i = 0; i < n; ++i) { this.parent[i] = i; this.ranks[i] = 0; this.sizes[i] = 1; }
+		}
+		public void union(int i, int j) {
+			int pi = find(i), pj = find(j);
+			if (pi == pj) return;
+			if (ranks[pi] == ranks[pj]) {
+				parent[pj] = pi;
+				sizes[pi] += sizes[pj];
+				ranks[pi]++;
+			} else if (ranks[pi] < ranks[pj]) {
+				parent[pi] = pj;
+				sizes[pj] += sizes[pi];
+			} else {
+				parent[pj] = pi;
+				sizes[pi] += sizes[pj];
+			}
+			nSets--;
+		}
+		public int find(int i) { return i == parent[i] ? i : (parent[i] = find(parent[i])); }
+		public int getSizeOfSet(int i) { return sizes[find(i)]; }
+		public int getNSets() { return nSets; }
+	}
+
 + Priority Queue (Java)
 
 + Binary Search Tree
