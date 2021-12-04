@@ -36,6 +36,16 @@ Priority Queues:
     pq.add(new int[]{0, dist[0] = 0});
     pq.add(new int[]{firstPerson, dist[firstPerson] = 0});
 
+Dequeue (faster than LinkedList/Stack as a queue)
+	Deque<Character> dq = new ArrayDeque<>();
+	+ methods: add()/addLast(), addFirst(), poll()/removeFirst(), removeLast()
+	+ iteration:
+		Iterator it = dq.descendingIterator();
+		// or: Iterator it = dq.iterator();
+		while (it.hasNext()) {
+			Character ch = (Character) it.next();
+
+		}
 #Techniques to remember
 
 BIT MANIPULATION

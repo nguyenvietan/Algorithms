@@ -32,6 +32,7 @@ public class StreamOfCharacters {
 		dq.add(letter);
 		if (dq.size()>2000) dq.removeFirst();
 		Iterator it = dq.descendingIterator();
+		// Iterator it = dq.iterator();
 		Node cur = root;
 		while(it.hasNext()) {
 			Character ch = (Character) it.next();
