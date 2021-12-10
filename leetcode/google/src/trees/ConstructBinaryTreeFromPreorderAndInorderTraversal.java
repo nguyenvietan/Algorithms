@@ -1,3 +1,8 @@
+package trees;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -14,7 +19,18 @@
  * }
  */
 class ConstructBinaryTreeFromPreorderAndInorderTraversal {
-
+	private class TreeNode {
+		int val;
+		TreeNode left;
+		TreeNode right;
+		TreeNode() {}
+		TreeNode(int val) { this.val = val; }
+		TreeNode(int val, TreeNode left, TreeNode right) {
+			this.val = val;
+			this.left = left;
+			this.right = right;
+		}
+	}
 	private int[] inorder, postorder;
 	private Map<Integer, Integer> map;
 	

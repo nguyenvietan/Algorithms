@@ -1,3 +1,6 @@
+package dfs;
+import java.util.*;
+
 /**
  * Account Merge:
  * #Solution #1: DFS, work with a graph built from strings

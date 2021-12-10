@@ -1,3 +1,5 @@
+package trees;
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -14,11 +16,24 @@
  * }
  */
 
+
 /**
  * [Review] Delete a Node in a BST
  * keys: recursion, delete a node in a tree (must keep the previous pointer by using recursion)
 */
-class Solution {
+class DeleteANodeInBST {
+	private class TreeNode {
+		int val;
+		TreeNode left;
+		TreeNode right;
+		TreeNode() {}
+		TreeNode(int val) { this.val = val; }
+		TreeNode(int val, TreeNode left, TreeNode right) {
+			this.val = val;
+			this.left = left;
+			this.right = right;
+		}
+	}
 	private TreeNode findPredecessor(TreeNode root) {
 		if (root == null || root.left == null) return null;
 		TreeNode n = root.left;

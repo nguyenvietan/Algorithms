@@ -6,7 +6,7 @@
  * */
 
 // Solution #2: Union Find
-class AccountMerge {
+/*class AccountMerge {
 	
 	private class UnionFind {
 		private int[] ranks, parent;		
@@ -56,6 +56,6 @@ class AccountMerge {
 		return res;		
 	}
 
-}
+}*/
 
 
