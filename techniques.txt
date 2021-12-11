@@ -28,10 +28,24 @@ Queue:
 	q.isEmpty(), q.poll(), q.add()
 
 Priority Queues:
-    // dist
+
+	// constructors with comparators
+	PriorityQueue<T> pq = new PriorityQueue<>(new ComparatorE());
+	public class ComparatorE<T> implements Comparator {
+		public int compare(T a, T b) {
+			// compare strings in lexicographical order:
+			// 		a.name.compareTo(b.name); // eg. "abc" is before "xyz"
+			// compare integers:
+			// 		a.score - b.score // eg. 1 is before 2
+		}
+	}
+
+	// constructors with lambda functions
+	PriorityQueue<T> pq = new PriorityQueue<>((a, b) -> (a.score == b.score) ? a.name.compareTo(b.name) : b.score - a.score);
+
+    // Shortest paths
     int[] dist = new int[n];
     Arrays.fill(dist, oo);
-    // pq
     PriorityQueue<int[]> pq = new PriorityQueue<>((u, v) -> (u[1] - v[1])); // (v, weight)
     pq.add(new int[]{0, dist[0] = 0});
     pq.add(new int[]{firstPerson, dist[firstPerson] = 0});
