@@ -25,6 +25,16 @@ public class FenwickTree {
 			k += lsOne(k);
 		}
 	}
+	// O((logN)^2)
+	public int findMinIndexCover(int x) {
+		int lo = 1, hi = n, m;
+		while (lo < hi) {
+			m = (lo + hi)/2;
+			if (rsq(m) >= x) hi = m;
+			else lo = m+1;
+		}
+		return lo;
+	}
 	private int lsOne(int b) { return b&(-b); }
 	private void printArr() {
 		for (int x : ft) System.out.printf("%d ", x);
@@ -41,7 +51,10 @@ public class FenwickTree {
 		System.out.printf("rsq(1, 6) = %d\n", fenwickTree.rsq(1, 6));
 		System.out.printf("rsq(1, 10) = %d\n", fenwickTree.rsq(1, 10));
 		System.out.printf("rsq(3, 6) = %d\n", fenwickTree.rsq(3, 6));
-		fenwickTree.adjust(5, 2);
-		System.out.printf("rsq(1, 10) = %d\n", fenwickTree.rsq(1, 10));
+		// fenwickTree.adjust(5, 2);
+		// System.out.printf("rsq(1, 10) = %d\n", fenwickTree.rsq(1, 10));
+		System.out.println("-------------------");
+		System.out.println(fenwickTree.findMinIndexCover(8));
+		System.out.println(fenwickTree.findMinIndexCover(16));
 	}
 }
