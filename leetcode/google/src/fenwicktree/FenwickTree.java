@@ -27,7 +27,7 @@ public class FenwickTree {
 	}
 	// O((logN)^2)
 	public int findMinIndexCover(int x) {
-		int lo = 1, hi = n, m;
+ 		int lo = 1, hi = n, m;
 		while (lo < hi) {
 			m = (lo + hi)/2;
 			if (rsq(m) >= x) hi = m;
