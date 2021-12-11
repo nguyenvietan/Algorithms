@@ -6,4 +6,5 @@ main
 **/out/
 **/.idea/*
 *.iml
-
+input.txt
+*.class
