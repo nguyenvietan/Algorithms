@@ -114,6 +114,30 @@ LOWER BOUND, UPPER BOUND of an sorted array
 QUICK SELECT
 	// TODO: review
 
+SINGELY LINKED LIST
+	// reverse
+	void reverse(Node head) {
+		if (head==null) return head;
+		Node prev=null, cur=head, next;
+		while (cur!=null) {
+			next=cur.next;
+			cur.next=prev;
+			prev=cur;
+			cur=next;
+		}
+		return prev;
+	}
+	// find middle node: two pointers
+	Node findMiddleNode(Node head) {
+		if (head==null) return head;
+		Node slow=head, fast=head;
+		while (fast!=null && fast.next!=null) {
+			fast=fast.next.next;
+			slow=slow.next;
+		}
+		return slow;
+	}
+
 ==================================================
 			FUNDAMENTAL DATASTRUCTURES
 =======
