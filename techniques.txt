@@ -16,6 +16,10 @@ Maps:
 	putIfAbsent(key, val)
 		eg.	map.putIfAbsent(arr[i], new ArrayList<>());
             map.get(arr[i]).add(i);
+    for (Map.Entry<K, V> entry : map0.entrySet()) {
+    	entry.getKey()
+    	entry.getVal()
+    }
 Lists:
 	addAll(List<>)
 	add(int)
