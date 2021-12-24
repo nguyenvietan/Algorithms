@@ -142,9 +142,6 @@ SINGELY LINKED LIST
 		return slow;
 	}
 
-==================================================
-			FUNDAMENTAL DATASTRUCTURES
-=======
 PRIME DECOMPOSE
 	List<Integer> primeDecompose(int n) {
 		List<Integer> res = new ArrayList<>();
@@ -160,6 +157,19 @@ PRIME DECOMPOSE
 	}
 	Exercises:
 		+ Largest Component Size by Common Factor	
+
+EULERIAN PATH:
+	+ directed graphs:
+		cycle: all nodes have indegree == outdegree
+		path: 	at most one node has indegree-outdegree == 1
+				at most one node has outdegree-indegree == 1 -> starting node
+				oll ther nodes have all indegree == outdegree
+	+ undirected graphs:
+		cycle: 	all nodes have even degrees
+		path:	all nodes have even degrees except exactly two nodes
+				(odd degrees, one node is the start, the other is the end)
+==================================================
+			FUNDAMENTAL DATASTRUCTURES
 
 # Basic data structures
 
