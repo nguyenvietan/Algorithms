@@ -64,6 +64,10 @@ Dequeue (faster than LinkedList/Stack as a queue)
 			Character ch = (Character) it.next();
 		}
 
+TreeMaps
+	TreeMap<K, V>
+	+ methods: get(), getOrDefault()), put(), keySet(), values()
+
 #Techniques to remember
 
 BIT MANIPULATION
