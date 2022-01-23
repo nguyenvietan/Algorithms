@@ -7,8 +7,15 @@ Java Heap, Comparator, ...
 Java's key libraries
 
 Sorting:
-	Arrays.sort(int[]) // more? 
 
+	Ascending order:
+		int[] arr = new in[]{1, 5, 7, 2, 4};
+		Arrays.sort(arr)
+
+	Descending order:
+		Integer[] arr = new Integer[]{1, 5, 7, 2, 4};
+		Arrays.sort(arr, (a, b)->{...}); // not for primitive types
+		Arrays.sort(arr, Collections.reverseOrder());
 
 Maps:
 	containsKey()
@@ -67,6 +74,12 @@ Dequeue (faster than LinkedList/Stack as a queue)
 TreeMaps
 	TreeMap<K, V>
 	+ methods: get(), getOrDefault()), put(), keySet(), values()
+
+TreeSets
+	TreeSet<Integer> treeSet = new TreeSet<>();
+	treeSet.add(x);
+	Integer higher = treeSet.higher(a); // check higher != null
+	Integer lower = treeSet.lower(a); // check lower != null
 
 #Techniques to remember
 
