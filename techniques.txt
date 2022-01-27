@@ -81,6 +81,13 @@ TreeSets
 	Integer higher = treeSet.higher(a); // check higher != null
 	Integer lower = treeSet.lower(a); // check lower != null
 
+StringBuilder
+	// can append int, float, string, char, char[]
+	StringBuilder sb = new StringBuilder;
+	sb.append('a').append("hello").append(123).append('-').append(0.64);
+	sb.append(new char[]{'a', 'c'});
+	sb.reverse().toString();
+
 #Techniques to remember
 
 BIT MANIPULATION
