@@ -1,0 +1,60 @@
+Binary Tree
+	full
+	complete
+	perfect
+
+HEAP
+	notes: 	priority queue: an bbstract data type
+			heap: a data structure
+	definitions:
+		min-heap = complete binary tree && value of a node <= values of its children
+		max-heap = complete binary tree && value of a node >= values of its children
+	properties:
+		insertion: O(logN)
+		deletion: O(logN)
+		getting min/max value: O(1)
+
+	Implementation:
+		public class MinHeap {
+			private int[] data;
+			private int sizeLimit, size;
+			public MinHeap(int n) { data=new int[n+1]; size=0; sizeLimit=n; }
+
+			public void add(int x) {
+				size++;
+				data[size]=x;
+				if (size>1) {
+					int idx=size;
+					while (idx>1) {
+						int pIdx=idx/2;
+						if (data[pIdx]>data[idx]) { swap(data, pIdx, idx); idx=pIdx; }
+						else break;
+					}
+				}		
+			}
+
+			public int peek() { return data[1]; }
+
+			public int pop() {
+				int ret=peek();
+				swap(data, 1, size);
+				size--;
+				int idx=1;
+				while (idx<=size/2) {
+					int left=2*idx, right=2*idx+1;
+					if (data[left]<data[idx]) { swap(data, left, idx); idx=left; }
+					else if (right<=size && data[right]<data[idx]) { swap(data, right, idx); idx=right; }
+					else break;			
+				}	
+				return ret;
+			}
+		    
+		    private void swap(int[] a, int i, int j) { int tmp=a[i]; a[i]=a[j]; a[j]=tmp; }
+
+		    public static void main(String []args){
+		        MinHeap h=new MinHeap(100);
+		        h.add(4); h.add(2); h.add(7);
+		        System.out.println(h.pop());
+		    }
+		}
+
